@@ -5,26 +5,21 @@ if (number > 3999 || number < 1 || (Math.trunc(number) !== number)) {
   console.error('Number must be a whole number between 1 and 3999');
   process.exit(1);
 }
-console.log('Your number is', number);
 
 const thousands = Math.trunc(number / 1000);
 const thousandsRemainder = number % 1000;
 romanNumerals += parse(thousands, 'M');
-console.log('There are', thousands, 'Thousands');
 
 const hundreds = Math.trunc(thousandsRemainder / 100);
 const hundredsRemainder = thousandsRemainder % 100;
 romanNumerals += parse(hundreds, 'C', 'D', 'M');
-console.log('There are', hundreds, 'Hundreds');
 
 const tens = Math.trunc(hundredsRemainder / 10);
 const tensRemainder = hundredsRemainder % 10;
 romanNumerals += parse(tens, 'X', 'L', 'C');
-console.log('There are', tens, 'Tens');
 
 const ones = tensRemainder;
 romanNumerals += parse(ones, 'I', 'V', 'X');
-console.log('There are', ones, 'Ones');
 
 console.log('\n----------------------------------------------------------------');
 console.log('Your Roman Numeral Is', romanNumerals);
