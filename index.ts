@@ -47,7 +47,7 @@ function parse(num: number, firstSymbol: string, secondSymbol?: string, thirdSym
       result += firstSymbol;
     }
   } else if (num < 10) {
-    result += secondSymbol;
+    result += firstSymbol;
     result += thirdSymbol;
   } else {
     result += thirdSymbol;
